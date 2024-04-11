@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     'corsheaders',
     'rest_framework',
+    'authenticationApp.apps.AuthenticationappConfig',
 ]
 
 MIDDLEWARE = [
@@ -103,6 +104,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTH_USER_MODEL = "authenticationApp.User"
 
 CORS_ALLOWED_ORIGINS = [
     'http://127.0.0.1:4200',
