@@ -44,3 +44,4 @@ Thumbs.db
 # Backend Django
 **/__pycache__/
 env/
+db.sqlite3
