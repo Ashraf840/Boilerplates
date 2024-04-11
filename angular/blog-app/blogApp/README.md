@@ -28,3 +28,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Resources
 - Blog Template: [Tailwind Blog Template by David Grzyb](https://www.tailwindawesome.com/resources/tailwind-blog-template)
+- Angular Tutorial [Blog Application in Angular | Mini Project Idea | Angular Project | Angular 15](https://www.youtube.com/watch?v=9o_ojs5gd9A)
