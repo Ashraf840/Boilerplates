@@ -7,3 +7,9 @@ from .serializers import PostSerializer
 class PostListCreate(generics.ListCreateAPIView):
     queryset = Post.objects.all().order_by('id')
     serializer_class = PostSerializer
+
+
+class PostDetailUpdateDestroy(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
+    lookup_fields = ('pk',)

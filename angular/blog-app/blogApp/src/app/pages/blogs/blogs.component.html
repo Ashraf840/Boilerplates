@@ -4,10 +4,10 @@
     <section class="w-full md:w-2/3 flex flex-col items-center px-3">
 
         <!-- Atricles will be looped based on fetched data from the backend -->
-        <article class="flex flex-col shadow my-4" *ngFor="let blog of blogList">
+        <article class="flex flex-col shadow mt-4 mb-20" *ngFor="let blog of blogList">
             <!-- Article Image -->
             <a routerLink="/blog" class="hover:opacity-75">
-                <img [src]="blog.banner_image">
+                <img [src]="blog.banner_image" class="w-full h-[30rem] object-cover">
             </a>
             <div class="bg-white flex flex-col justify-start p-6">
                 <a href="#" class="text-blue-700 text-sm font-bold uppercase pb-4">{{ blog.category }}</a>
