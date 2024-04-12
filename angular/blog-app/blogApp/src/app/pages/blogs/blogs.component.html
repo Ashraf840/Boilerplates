@@ -16,9 +16,13 @@
                     By <a href="#" class="font-semibold hover:text-gray-800">{{ blog.author }}</a>, Published on {{
                     blog.created_at }}
                 </p>
-                <a href="#" class="pb-6">{{ blog.content | slice:0:200 }} .....(More)</a>
-                <a href="#" class="uppercase text-gray-800 hover:text-black">Continue Reading <i
-                        class="fas fa-arrow-right"></i></a>
+                <a (click)="openBlog(blog.id)" class="pb-6">{{ blog.content | slice:0:200 }}
+                    <span class="cursor-pointer">
+                        .....(More)
+                    </span>
+                </a>
+                <a (click)="openBlog(blog.id)" class="uppercase cursor-pointer text-gray-800 hover:text-black">Continue
+                    Reading<i class="fas fa-arrow-right"></i></a>
             </div>
         </article>
 

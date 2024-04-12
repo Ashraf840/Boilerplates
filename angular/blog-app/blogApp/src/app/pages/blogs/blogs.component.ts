@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-blogs',
@@ -10,7 +11,7 @@ export class BlogsComponent implements OnInit {
 
   blogList: any[] = [];
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit(): void {
     this.getAllBlogs();
@@ -23,4 +24,7 @@ export class BlogsComponent implements OnInit {
     });
   }
 
+  openBlog(id: number) {
+    this.router.navigate(['/blog', id]);
+  }
 }
