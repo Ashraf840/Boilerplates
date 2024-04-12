@@ -1,6 +1,5 @@
 from rest_framework import serializers
 from .models import Post
-import src.settings as settings
 
 
 class PostSerializer(serializers.ModelSerializer):
