@@ -1,1 +1,75 @@
-<p>profile works!</p>
+<div class="container mx-auto flex flex-wrap py-6 -mt-10">
+
+    <!-- Profile Section -->
+    <section class="w-full flex flex-col items-center px-3 mb-20">
+
+        <div>
+            <img class="rounded-md border-4 border-gray-100 shadow h-[15rem] w-[15rem] object-cover hover:opacity-75"
+                src="https://source.unsplash.com/collection/1346951/150x150?sig=1">
+        </div>
+        <h1 class="text-3xl font-bold mt-4">jamesbhatta</h1>
+        <h2 class="text-2xl text-black/60">@jamesbhatta</h2>
+        <div class="flex flex-row gap-3 py-5">
+            <p>5 Components</p>
+            <p>Member Since 3 years ago</p>
+        </div>
+        <div class="flex flex-row gap-4">
+            <div class="flex items-center justify-center p-2">
+                <p>Follow on:</p>
+            </div>
+            <div class="flex items-center justify-center p-2 rounded-md border-[0.1rem] border-black/20"><i
+                    class="fab fa-facebook text-3xl"></i>
+            </div>
+            <div class="flex items-center justify-center p-2 rounded-md border-[0.1rem] border-black/20"><i
+                    class="fab fa-instagram text-3xl"></i>
+            </div>
+            <div class="flex items-center justify-center p-2 rounded-md border-[0.1rem] border-black/20"><i
+                    class="fab fa-medium text-3xl"></i>
+            </div>
+            <div class="flex items-center justify-center p-2 rounded-md border-[0.1rem] border-black/20"><i
+                    class="fab fa-squarespace text-3xl"></i>
+            </div>
+            <div class="flex items-center justify-center p-2 rounded-md border-[0.1rem] border-black/20"><i
+                    class="fab fa-blogger text-3xl"></i>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Author Article Section -->
+    <div class="w-full text-center p-20">
+        <h1 class="text-5xl font-bold">Articles</h1>
+    </div>
+    <section class="grid grid-cols-3 gap-8 w-full">
+        <article class="shadow mb-12" *ngFor="let _ of [].constructor(8); let i = index">
+            <!-- Article Image -->
+            <a class="hover:opacity-75 cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1712313221432-16ee2d6aba88"
+                    class="w-full h-[20rem] object-cover">
+            </a>
+            <div class="bg-white flex flex-col justify-start p-6">
+                <a href="#" class="text-blue-700 text-sm font-bold uppercase pb-4">blog.category</a>
+                <a href="#" class="text-3xl font-bold hover:text-gray-700 pb-4">blog.title</a>
+                <p href="#" class="text-sm pb-3">
+                    By <a routerLink="/profile" class="font-semibold hover:text-gray-800">blog.author</a>,
+                    Published on blog.created_at
+                </p>
+                <a class="pb-6">blog.content
+                    <span class="cursor-pointer">
+                        .....(More)
+                    </span>
+                </a>
+                <a class="uppercase cursor-pointer text-gray-800 hover:text-black">Continue
+                    Reading<i class="fas fa-arrow-right"></i></a>
+            </div>
+        </article>
+
+    </section>
+
+    <div class="w-full h-20 flex flex-row justify-center items-center my-8">
+        <div
+            class="group w-40 h-8 py-8 bg-gray-100/30 flex justify-center items-center cursor-pointer rounded-md border-[0.1rem] border-black/20 tracking-wider hover:scale-[1.02] hover:text-black active:scale-[1.01]">
+            <p class="[word-spacing:0.2rem] text-black/60 group-hover:text-black">Show More</p>
+        </div>
+    </div>
+</div>

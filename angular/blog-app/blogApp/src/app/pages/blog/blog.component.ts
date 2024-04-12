@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-blog',
@@ -9,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class BlogComponent implements OnInit {
 
-  constructor(private activatedRoute: ActivatedRoute, private http: HttpClient) { }
+  constructor(private activatedRoute: ActivatedRoute, private http: HttpClient, private router: Router) { }
 
   blogId: number = 0;
   blogDetail: any;
@@ -20,6 +21,12 @@ export class BlogComponent implements OnInit {
       this.blogId = res.pk; // aligned to required params defined in the path of app-routing.module.ts
       this.getBlog(this.blogId);
     });
+
+    this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe(() => {
+        window.scrollTo(0, 0);
+      });
   }
 
   getBlog(id: number) {
