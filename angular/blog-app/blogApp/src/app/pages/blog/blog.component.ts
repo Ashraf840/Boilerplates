@@ -31,6 +31,7 @@ export class BlogComponent implements OnInit {
 
   getBlog(id: number) {
     this.http.get(`http://127.0.0.1:8080/blog/api/${id}/`).subscribe((res: any) => {
+      // debugger;
       this.blogDetail = res;
     });
   }

@@ -12,7 +12,8 @@
                 <a href="#" class="text-blue-700 text-sm font-bold uppercase pb-4">{{ blogDetail.category }}</a>
                 <a class="text-3xl font-bold pb-4">{{ blogDetail.title }}</a>
                 <p href="#" class="text-sm pb-8">
-                    By <a routerLink="/profile" class="font-semibold hover:text-gray-800">{{ blogDetail.author }}</a>,
+                    By <a [routerLink]="['/profile', blogDetail.author_username]"
+                        class="font-semibold hover:text-gray-800">{{ blogDetail.author }}</a>,
                     {{
                     blogDetail.created_at }}
                 </p>

@@ -14,7 +14,7 @@ const routes: Routes = [
     component: BlogComponent
   },
   {
-    path: 'profile',
+    path: 'profile/:username',
     component: ProfileComponent
   },
 ];

@@ -8,13 +8,14 @@ class PostSerializer(serializers.ModelSerializer):
     category = serializers.StringRelatedField(many=True)
     author = serializers.StringRelatedField()
     author_profile_picture = serializers.SerializerMethodField()
+    author_username = serializers.StringRelatedField(source='author.username')
     
     class Meta:
         model = Post
         fields = [
             'id', 'tag', 'category', 'author', 'title', 'content', 
             'readingTime', 'banner_image', 'status', 'created_at',
-            'updated_at', 'author_profile_picture',
+            'updated_at', 'author_profile_picture', 'author_username',
         ]
 
     def get_author_profile_picture(self, obj):

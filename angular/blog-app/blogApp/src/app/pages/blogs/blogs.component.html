@@ -13,8 +13,9 @@
                 <a href="#" class="text-blue-700 text-sm font-bold uppercase pb-4">{{ blog.category }}</a>
                 <a (click)="openBlog(blog.id)" class="text-3xl font-bold hover:text-gray-700 pb-4 cursor-pointer">{{
                     blog.title }}</a>
-                <p href="#" class="text-sm pb-3">
-                    By <a routerLink="/profile" class="font-semibold hover:text-gray-800">{{ blog.author }}</a>,
+                <p class="text-sm pb-3">
+                    By <a [routerLink]="['/profile', blog.author_username]" class="font-semibold hover:text-gray-800">{{
+                        blog.author }}</a>,
                     Published on {{
                     blog.created_at }}
                 </p>
