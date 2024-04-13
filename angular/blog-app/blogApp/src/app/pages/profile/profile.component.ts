@@ -31,8 +31,13 @@ export class ProfileComponent implements OnInit {
 
   getAuthorDetail(username: string) {
     this.http.get(`http://127.0.0.1:8080/user/api/author/${username}/`).subscribe((res: any) => {
+      // debugger;
       this.authorDetail = res;
     });
+  }
+
+  openBlog(id: number) {
+    this.router.navigate(['/blog', id]);
   }
 
 }
