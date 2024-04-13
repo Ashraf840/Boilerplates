@@ -10,9 +10,10 @@
             </a>
             <div class="bg-white flex flex-col justify-start p-6">
                 <a href="#" class="text-blue-700 text-sm font-bold uppercase pb-4">{{ blogDetail.category }}</a>
-                <a href="#" class="text-3xl font-bold hover:text-gray-700 pb-4">{{ blogDetail.title }}</a>
+                <a class="text-3xl font-bold pb-4">{{ blogDetail.title }}</a>
                 <p href="#" class="text-sm pb-8">
-                    By <a href="#" class="font-semibold hover:text-gray-800">{{ blogDetail.author }}</a>, {{
+                    By <a routerLink="/profile" class="font-semibold hover:text-gray-800">{{ blogDetail.author }}</a>,
+                    {{
                     blogDetail.created_at }}
                 </p>
                 <p class="pb-3">{{ blogDetail.content }}</p>
