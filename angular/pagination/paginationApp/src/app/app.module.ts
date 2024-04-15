@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { PaginationComponent } from './pagination/pagination.component';
+import { ProductDataService } from './services/product-data.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -10,9 +12,12 @@ import { PaginationComponent } from './pagination/pagination.component';
     PaginationComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    ProductDataService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

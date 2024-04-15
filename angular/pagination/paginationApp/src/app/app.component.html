@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pagination Practice</title>
+  <title>{{ title }} Pagination Practice</title>
 </head>
 
 <body>
@@ -64,7 +64,9 @@
       </table>
     </div>
 
-    <app-pagination></app-pagination>
+    <!-- Since the data initially gets fetched from the api, so the "*ngIf" directive will ensure that data gets passed to the child component actually. SolutionRef: https://www.youtube.com/watch?v=ZVN6Wdy92ek -->
+    <app-pagination *ngIf="productCount > 0" [totalProducts]="productCount" [nextPage]="next"
+      [previousPage]="previous"></app-pagination>
 
   </div>
 
