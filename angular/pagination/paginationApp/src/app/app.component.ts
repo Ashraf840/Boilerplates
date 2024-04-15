@@ -1,5 +1,4 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
-import { tableData } from './tableData';
+import { Component, OnInit } from '@angular/core';
 import { ProductDataService } from './services/product-data.service';
 
 @Component({
@@ -7,13 +6,14 @@ import { ProductDataService } from './services/product-data.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit, AfterViewInit {
+export class AppComponent implements OnInit {
 
   title = 'paginationApp';
   data: any;
   productCount: number = 0;
   next: any;
   previous: any;
+  limitPerPage: number = 20;
 
   constructor(private productDataService: ProductDataService) { }
 
@@ -33,10 +33,6 @@ export class AppComponent implements OnInit, AfterViewInit {
       // if (this.next === null) console.log("Next URL is null! Value:", this.next);
       // if (this.previous === null) console.log("Previous URL is null! Value:", this.previous);
     });
-  }
-
-  ngAfterViewInit(): void {
-
   }
 
 }

@@ -65,8 +65,8 @@
     </div>
 
     <!-- Since the data initially gets fetched from the api, so the "*ngIf" directive will ensure that data gets passed to the child component actually. SolutionRef: https://www.youtube.com/watch?v=ZVN6Wdy92ek -->
-    <app-pagination *ngIf="productCount > 0" [totalProducts]="productCount" [nextPage]="next"
-      [previousPage]="previous"></app-pagination>
+    <app-pagination *ngIf="productCount > 0" [totalProducts]="productCount" [nextPage]="next" [previousPage]="previous"
+      [limitPerPage]="limitPerPage"></app-pagination>
 
   </div>
 
