@@ -13,7 +13,8 @@ export class AppComponent implements OnInit {
   productCount: number = 0;
   next: any;
   previous: any;
-  limitPerPage: number = 20;
+  // limitPerPage: number = 20;
+  limitPerPage: number = 100; // just to simplify the pagination-nav-numbers
 
   constructor(private productDataService: ProductDataService) { }
 
