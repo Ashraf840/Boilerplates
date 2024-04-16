@@ -11,8 +11,8 @@ export class ProductDataService {
 
   constructor(private http: HttpClient) { }
 
-  getPaginatedData(): Observable<any[]> {
+  getPaginatedData(page: number = 1): Observable<any[]> {
     // return this.http.get<any[]>(`${this.ProductCLUrl}`);
-    return this.http.get<any[]>(`${this.ProductCLUrl}?page=5`);
+    return this.http.get<any[]>(`${this.ProductCLUrl}?page=${page}`);
   }
 }

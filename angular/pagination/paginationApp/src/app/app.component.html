@@ -42,7 +42,7 @@
           <tr *ngFor="let item of data; let i=index"
             class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
             <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-              {{ i+1 }}
+              {{ item.id }}
             </th>
             <td class="px-6 py-4">
               {{ item.productName }}
@@ -66,7 +66,7 @@
 
     <!-- Since the data initially gets fetched from the api, so the "*ngIf" directive will ensure that data gets passed to the child component actually. SolutionRef: https://www.youtube.com/watch?v=ZVN6Wdy92ek -->
     <app-pagination *ngIf="productCount > 0" [totalProducts]="productCount" [nextPage]="next" [previousPage]="previous"
-      [limitPerPage]="limitPerPage"></app-pagination>
+      [limitPerPage]="limitPerPage" (onClick)="pageChangeEvent($event)"></app-pagination>
 
   </div>
 

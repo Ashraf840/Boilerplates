@@ -18,22 +18,29 @@ export class AppComponent implements OnInit {
 
   constructor(private productDataService: ProductDataService) { }
 
-  ngOnInit(): void {
+  ngOnInit(page: number = 1): void {
     // this.data = tableData;
-    this.productDataService.getPaginatedData().subscribe((res: any) => {
+    this.productDataService.getPaginatedData(page).subscribe((res: any) => {
       // debugger;
       this.productCount = res.count;
       this.next = res.next;
       this.previous = res.previous;
       this.data = res.results;
 
-      console.log("productCount-parent:", this.productCount);
-      console.log("next-parent:", this.next);
-      console.log("previous-parent:", this.previous);
+      // console.log("productCount-parent:", this.productCount);
+      // console.log("next-parent:", this.next);
+      // console.log("previous-parent:", this.previous);
 
       // if (this.next === null) console.log("Next URL is null! Value:", this.next);
       // if (this.previous === null) console.log("Previous URL is null! Value:", this.previous);
     });
+  }
+
+  pageChangeEvent(
+    pageNum: number = 0,
+  ) {
+    // console.log('go to a specific page-parent:', pageNum);
+    this.ngOnInit(pageNum);
   }
 
 }
